@@ -90,6 +90,8 @@ if (not(defined($debianroot))) {
   exit(1);
 }
 
+$debianroot =~ s|/\z||;
+
 # Connect to API
 $client = new Frontier::Client(url => "http://localhost/rpc/api") ||
   die "ERROR: Could not connect to API";
